@@ -34,6 +34,16 @@ A high-performance, modular ETL (Extract, Transform, Load) data pipeline built i
 
 ---
 
+## Development & Decisions
+
+### Architectural Decisions (RFCs)
+We use a formal **RFC (Request for Comments)** process for all major architectural and design decisions. This ensures that the logic behind our choices is documented, debated, and preserved as a living history.
+
+- **Discovery**: See the [RFC Index](docs/rfcs/README.md) for a list of all decisions.
+- **Process**: To propose a change, follow the instructions in the [RFC directory](docs/rfcs/).
+
+---
+
 ## Resilience & Reliability
 
 - **Fail-Fast Orchestration**: If a Producer fails, the pipeline immediately signals sibling Consumers to stop, preventing "zombie" states and stopping the source for sending new messages until the issue is resolved this preventing data loss on the middle of downtime.
