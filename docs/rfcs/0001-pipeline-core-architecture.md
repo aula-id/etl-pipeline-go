@@ -129,12 +129,12 @@ type Supervisor interface {
 
 Four phases over 8 weeks. Each delivers a working binary.
 
-| Phase | Weeks | Deliverable |
-|---|---|---|
-| **1: Core Lifecycle & Stream** | 1-2 | `go run cmd/worker/main.go` runs a pipeline from any Source to stdout. Lifecycle interfaces, InProcStream, Supervisor, Pipeline, Worker, YAML config loading, debug CLI. |
-| **2: Checkpointing, DLQ & At-Least-Once** | 3-4 | Kill worker mid-flight → resume from last committed checkpoint. bboltDB checkpoint store, stream replay, DLQ routing, crash-recovery E2E tests. |
-| **3: Transforms, Metrics & Observability** | 5-6 | Transformer chain, Prometheus metrics, OpenTelemetry tracing, slog logging, HTTP health endpoints. |
-| **4: Live Config Reload & Cluster** | 7-8 | fsnotify hot-reload, NATS KV/JetStream adapters, leader election. |
+| Phase | Deliverable |
+|---|---|
+| **1: Core Lifecycle & Stream** | `go run cmd/worker/main.go` runs a pipeline from any Source to stdout. Lifecycle interfaces, InProcStream, Supervisor, Pipeline, Worker, YAML config loading, debug CLI. |
+| **2: Checkpointing, DLQ & At-Least-Once** | Kill worker mid-flight → resume from last committed checkpoint. bboltDB checkpoint store, stream replay, DLQ routing, crash-recovery E2E tests. |
+| **3: Transforms, Metrics & Observability** | Transformer chain, Prometheus metrics, OpenTelemetry tracing, slog logging, HTTP health endpoints. |
+| **4: Live Config Reload & Cluster** | fsnotify hot-reload, NATS KV/JetStream adapters, leader election. |
 
 ## 4. Alternatives Considered
 
